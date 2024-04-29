@@ -16,8 +16,8 @@
 
 ### Event related to availability
 
-|event type category| event ID|
-------------------- |--- 
+| event type category | event ID |
+| :--- | :--- |
 |scheduledChange    |*         |
 
 ## RDS
@@ -35,11 +35,22 @@ RDS -> event notification -> sns -> action
 
 ### Event realted to availability
 
-| detail-type         | EventCategory    | EventID   |
---------------------------------------------------
-| RDS DB Cluster Event| | |
+| detail-type               | EventCategory    | EventID   |
+| :--- | :--- | :--- |
+| RDS DB Cluster Event      | *                | *         |
+| RDS DB Instance Event     | *                | *         | 
+| RDS DB Parameter Group Event     | *         | *         | 
+| RDS DB Security Group Event      | *         | *         | 
+| RDS DB Snapshot Event     | *                | *         |
+| RDS DB Cluster Snapshot Event     | *        | *         |
+| RDS DB Proxy Event     | *          | *      | *
+| RDS Blue Green Deployment Event     | *      | *         |
+| RDS DB Instance Event     | maintenance      | *         |
+
+
 
 ## Elasticache Redis
+
 
 ## MemoryDB
 
