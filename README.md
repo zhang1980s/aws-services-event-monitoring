@@ -31,7 +31,7 @@ RDS -> Eventbridge -> rule -> action
 
 Or
 
-RDS -> event notification -> sns -> action
+RDS -> cluster -> event notification -> sns -> action
 
 ### Event realted to availability
 
@@ -45,15 +45,32 @@ RDS -> event notification -> sns -> action
 | RDS DB Cluster Snapshot Event     | *        | *         |
 | RDS DB Proxy Event     | *          | *      | *
 | RDS Blue Green Deployment Event     | *      | *         |
-| RDS DB Instance Event     | maintenance      | *         |
 
 
 
 ## Elasticache Redis
+[Elasticache events](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/self-designed-events.html)
 
 
-## MemoryDB
+### Workflow
+Elasticache Redis -> Cluster -> Topic for SNS Notification -> sns -> action
+
+*Self-designed cluster events are not published to Amazon EventBridge.*
 
 ## Amazon OpenSearch Service
+[Monitoring event](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/monitoring-events.html)
+
+### Workflow
+AOS -> eventbridge -> rule -> action
 
 ## Kafka
+
+### Workflow
+MSK -> Health API -> Eventbridge -> rule -> action
+
+### Event
+| detail-type   | source    | detail -> service |
+| :--- | :--- | :--- |
+| AWS Health Event | aws.health | KAFKA |
+
+example: https://github.com/zhang1980s/aws-event-bot/blob/main/test/health-msk.json
