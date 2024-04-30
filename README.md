@@ -15,6 +15,7 @@
 [EBS events](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-cloud-watch-events.html)
 
 ### Event related to availability
+Health API via Eventbridge
 
 | event type category | event ID |
 | :--- | :--- |
